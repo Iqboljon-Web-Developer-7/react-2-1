@@ -1,0 +1,17 @@
+body.dark {
+  .ant-pagination-prev.ant-pagination-disabled {
+    > a {
+      color: rgb(150, 150, 150) !important;
+    }
+  }
+  .ant-pagination-item {
+    &:hover {
+      background-color: aliceblue !important;
+    }
+    &-ellipsis {
+      background-color: rgb(135, 133, 133) !important;
+      border-radius: 0.3rem;
+      color: wheat !important;
+    }
+  }
+}
