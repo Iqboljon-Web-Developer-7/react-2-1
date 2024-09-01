@@ -33,21 +33,21 @@ const Products = ({ data, total, setSkip }) => {
       className="border border-green-100 group rounded-xl dark:border-slate-600 dark:hover:border-green-200 hover:border-green-400 hover:shadow-md duration-300 cursor-pointer p-3"
       key={inx}
     >
-      <div className="w-full h-60 bg-gray-200">
+      {/* <div className="w-full h-60 bg-gray-200">
         <Link to={`/product/${product?.id}`}>
           <img
             className="w-full h-full object-contain"
-            src={product.images[0]}
+            // src={product.images[0]}
             alt="Photo"
           />
         </Link>
-      </div>
-      <p className="text-sm mt-2 text-slate-500">{product.tags[0]}</p>
+      </div> */}
+      {/* <p className="text-sm mt-2 text-slate-500">{product.tags[0]}</p> */}
       <p className="mt-2 leading-6 text-[1rem] dark:text-slate-200">
         {product.title}
       </p>
       <p className="mt-2 leading-5 text-sm line-clamp-2 text-slate-800 dark:text-slate-300">
-        {product.description}
+        {product.desc}
       </p>
       <p className="mt-2 flex items-center gap-3">
         <Rating rating={product.rating} />{" "}

@@ -6,15 +6,15 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [skip, setSkip] = useState(0);
-  const { data } = useFetch(`/products`, { limit: 10, skip: (skip - 1) * 10 }, [
-    skip,
-  ]);
+  const { data } = useFetch(`/products`, [skip]);
   const userData = useSelector((state) => state.userData);
   const navigate = useNavigate();
   const navigateHandler = () => {
     navigate("/form");
   };
   useEffect(() => {
+    console.log(userData);
+
     if (Object.keys(userData).length == 0) {
       navigateHandler();
     }
@@ -22,7 +22,8 @@ const Home = () => {
 
   return (
     <>
-      <Products data={data?.products} total={data?.total} setSkip={setSkip} />
+      {console.log(data)}
+      <Products data={data?.payload} total={data?.total} setSkip={setSkip} />
     </>
   );
 };

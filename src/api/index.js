@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const mainUrl = axios.create({
-    baseURL: "https://dummyjson.com"
-})
+  baseURL: "https://trade.namtech.uz",
+});
 
-export default mainUrl
+export default mainUrl;

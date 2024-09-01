@@ -25,7 +25,7 @@ const Account = () => {
   const saveToken = (data, values) => {
     console.log(data);
 
-    fetch("https://dummyjson.com/auth/login", {
+    fetch("https://trade.namtech.uz/admins/sign-in", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -45,12 +45,11 @@ const Account = () => {
         // localStorage.setItem("token", JSON.stringify(res.token));
 
         success("Successfully logged in :)");
-        console.log(res);
 
         dispatch({ type: "SAVE_USER", payload: { ...values, img: res.image } });
         setTimeout(() => {
-          localStorage.setItem("userTokent", JSON.stringify(res.token));
-          dispatch({ type: "ADD_TOKEN", token: res.token });
+          localStorage.setItem("userTokent", res.payload.token);
+          dispatch({ type: "ADD_TOKEN", token: res.payload.token });
           navigateHandler("/");
         }, 500);
       });
@@ -66,14 +65,7 @@ const Account = () => {
 
   return (
     <section className="wrapper mt-16 border-slate-100">
-      <div className="product__info flex items-center text-sm my-4 gap-4">
-        <Link to={"/"} className="flex items-center justify-center gap-2">
-          {/* <img src={img} className="max-w-4" alt="img of home" /> */}
-          <span className="text-[#3BB77E]">Home</span>
-        </Link>{" "}
-        <span className="text-slate-300">/</span>
-        <p className="text-slate-300">Form</p>
-      </div>
+      {/*  */}
       <div className="min-h-[77vh] py-2 flex items-center justify-center flex-col">
         <Form
           name="basic"
